@@ -18,18 +18,7 @@ namespace webapi.event_.tarde.Repositories
         {
             try
             {
-                /*Usuario usuarioBuscado = _eventContext.Usuario.FirstOrDefault(u => u.Email == email)!;
-                if (usuarioBuscado != null) 
-                {
-                    bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
 
-                    if (confere) 
-                    {
-                        return usuarioBuscado;
-                    }
-                }*/
-
-                //**********testa aqui!!!!!!
                 Usuario usuarioBuscado = _eventContext.Usuario.Select(u => new Usuario
                 {
                     IdUsuario = u.IdUsuario,
@@ -43,7 +32,23 @@ namespace webapi.event_.tarde.Repositories
                         Titulo = u.TipoUsuario!.Titulo
                     }
                 }).FirstOrDefault(u => u.Email == email)!;
-                return null!;
+
+
+
+
+                if (usuarioBuscado != null)
+                {
+                    bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
+
+                    if (confere)
+                    {
+                        return usuarioBuscado;
+                    }
+                }
+
+                return null;
+
+                //**********testa aqui!!!!!!
             }
             catch (Exception)
             {
@@ -52,7 +57,7 @@ namespace webapi.event_.tarde.Repositories
             }
         }
 
-        public void BuscarPorId(Guid id)
+        public Usuario BuscarPorId(Guid id)
         {
             try
             {
@@ -68,7 +73,10 @@ namespace webapi.event_.tarde.Repositories
                             Titulo = u.TipoUsuario!.Titulo
                         }
                 }).FirstOrDefault(u => u.IdUsuario == id)!;
+
+                return usuarioBuscado;
             }
+
             catch (Exception)
             {
 

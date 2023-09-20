@@ -9,31 +9,39 @@ namespace webapi.event_.tarde.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class TipoUsuarioController : ControllerBase
+    public class EventoController : ControllerBase
     {
-        private ITipoUsuarioRepository _tipoUsuarioRepository { get; set; }
+        private readonly IEventoRepository _eventoRepository;
 
-        public TipoUsuarioController() 
+        public EventoController()
         {
-            _tipoUsuarioRepository = new TipoUsuarioRepository();
+            _eventoRepository = new EventoRepository();
         }
 
 
-        //Cadastra tipos de usuário
+        /// <summary>
+        /// Cadastre os eventos aqui!!!
+        /// </summary>
+        /// <param name="evento"></param>
+        /// <returns></returns>
         [HttpPost]
-        public IActionResult Post(TipoUsuario tipoUsuario)
+        public IActionResult Post(Evento evento) 
         {
             try
             {
-                _tipoUsuarioRepository.Cadastrar(tipoUsuario);
-                return StatusCode(201);
+                _eventoRepository.Cadastrar(evento);
 
+                return Ok(evento);
             }
             catch (Exception e)
             {
 
                 return BadRequest(e.Message);
             }
+        
         }
+
+
+
     }
 }

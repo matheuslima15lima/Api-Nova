@@ -6,7 +6,7 @@ namespace webapi.event_.tarde.Interfaces
     {
         void Cadastrar(Usuario usuario);
 
-        void BuscarPorId(Guid id);
+        Usuario BuscarPorId(Guid id);
 
         Usuario BuscarPorEmailESenha(string email, string senha);
     }

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi.event+.tarde</name>
+    </assembly>
+    <members>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.Post(webapi.event_.tarde.Domains.Evento)">
+            <summary>
+            Cadastre os eventos aqui!!!
+            </summary>
+            <param name="evento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.UsuarioController.GetByID(System.Guid)">
+            <summary>
+            Endpoint que busca por ID
+            </summary>
+            <param name="id"></param>
+            <returns> usuario que foi buscado</returns>
+        </member>
+        <member name="T:webapi.event_.tarde.Migrations.BD_V1">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.tarde.Migrations.BD_V1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.tarde.Migrations.BD_V1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.tarde.Migrations.BD_V1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.tarde.Utils.Criptografia.GerarHash(System.String)">
+            <summary>
+            Gera uma Hash a partir de uma senha
+            </summary>
+            <param name="senha">Senha que recebera a hash</param>
+            <returns>senha criptografada com a hash</returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Utils.Criptografia.CompararHash(System.String,System.String)">
+            <summary>
+            Verifica se a hash da senha informada é igual á hash salva no BD
+            </summary>
+            <param name="senhaForm">Senha pasada no form de login</param>
+            <param name="senhaBanco">Senha cadastrada no banco</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

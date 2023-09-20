@@ -12,6 +12,7 @@ namespace webapi.event_.tarde.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class LoginController : ControllerBase
     {
         private readonly IUsuarioRepository _usuarioRepository;
@@ -38,8 +39,9 @@ namespace webapi.event_.tarde.Controllers
               {
                     //formato da Claim(tipo, valor)
                     new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
-                    new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
-                    new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario.Titulo.ToString()),
+                    new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Email, usuarioBuscado.Email!),
+                    new Claim(Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames.Name, usuarioBuscado.Nome!),
+                    new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario!.Titulo!),
                     //existe a possibilidade de criar uma claim personalizada
                     new Claim("Claim Perso","ValorPersonalizado")
                };
@@ -51,10 +53,10 @@ namespace webapi.event_.tarde.Controllers
                 var token = new JwtSecurityToken
               (
                   //emissor do token
-                  issuer: "Event-chave-autenticacao-webapi-dev",
+                  issuer: "webapi.event+.tarde",
 
                   //destinatário
-                  audience: "Event-chave-autenticacao-webapi-dev",
+                  audience: "webapi.event+.tarde",
 
                   //dados definidos nas claims (Payload)
                   claims: Claims,
@@ -73,10 +75,10 @@ namespace webapi.event_.tarde.Controllers
                 });
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                return BadRequest(e.Message);
             }
         }
     }

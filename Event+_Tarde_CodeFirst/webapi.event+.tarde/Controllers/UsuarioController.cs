@@ -33,5 +33,31 @@ namespace webapi.event_.tarde.Controllers
                return BadRequest(e.Message);
             }
         }
+
+
+        /// <summary>
+        /// Endpoint que busca por ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> usuario que foi buscado</returns>
+        [HttpGet("{id}")]
+        public IActionResult GetByID(Guid id)
+        {
+            try
+            {
+
+                Usuario usuarioBuscado = _usuarioRepository.BuscarPorId(id);
+
+
+                return Ok(usuarioBuscado);
+
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+        }
+        
     }
 }

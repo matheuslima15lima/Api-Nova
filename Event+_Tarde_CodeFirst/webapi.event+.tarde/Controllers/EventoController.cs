@@ -41,6 +41,20 @@ namespace webapi.event_.tarde.Controllers
         
         }
 
+        [HttpGet]
+       public  IActionResult Get()
+        {
+            try
+            {
+               return Ok(_eventoRepository.Listar());
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
 
 
     }

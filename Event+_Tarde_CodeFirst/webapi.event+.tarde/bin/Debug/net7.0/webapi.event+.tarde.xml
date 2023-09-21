@@ -11,6 +11,27 @@
             <param name="evento"></param>
             <returns></returns>
         </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Get(webapi.event_.tarde.Domains.PresencaEvento)">
+            <summary>
+            Método de cadastrar presenças
+            </summary>
+            <param name="presencaEvento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.GetById(System.Guid)">
+            <summary>
+            Endpoint que busca por id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Delete(System.Guid)">
+            <summary>
+            EndPoint de deletar Presenças
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:webapi.event_.tarde.Controllers.UsuarioController.GetByID(System.Guid)">
             <summary>
             Endpoint que busca por ID

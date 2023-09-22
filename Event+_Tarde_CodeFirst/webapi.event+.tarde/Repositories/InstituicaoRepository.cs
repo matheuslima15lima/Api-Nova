@@ -12,10 +12,55 @@ namespace webapi.event_.tarde.Repositories
         {
             _eventContext = new EventContext();
         }
+
+        public void Atualizar(Guid id, PresencaEvento presencaEvento)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BuscarPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Cadastrar(Instituicao instituicao)
         {
-            _eventContext.Add(instituicao);
-            _eventContext.SaveChanges();
+            try
+            {
+                _eventContext.Add(instituicao);
+                _eventContext.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+        }
+
+        public void Deletar(Guid id)
+        {
+            try
+            {
+               PresencaEvento presencaBuscada = _eventContext.PresencaEvento.Find(id)!;
+
+                if(presencaBuscada != null)
+                {
+                    _eventContext.Remove(presencaBuscada);
+                }
+                _eventContext.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<Instituicao> Listar()
+        {
+           return _eventContext.Instituicao.ToList();
         }
     }
 }

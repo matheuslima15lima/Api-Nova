@@ -51,8 +51,8 @@ namespace webapi.event_.tarde.Controllers
         {
             try
             {
-               PresencaEvento presencaBuscada = _presencaEventoRepository.BuscarPorId(id);
-                return Ok(presencaBuscada);
+                return Ok(_presencaEventoRepository.BuscarPorId(id));
+
             }
             catch (Exception e)
             {
@@ -78,6 +78,27 @@ namespace webapi.event_.tarde.Controllers
             catch (Exception e)
             {
 
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Endpoint que atualiza a Situação da presença
+        /// </summary>
+        /// <param name="id">Id que receberá o Update</param>
+        /// <param name="presencaEvento">objeto atualizado</param>
+        /// <returns>Objeto já atualizado</returns>
+        [HttpPut]
+        public IActionResult Put(Guid id, PresencaEvento presencaEvento)
+        {
+            try
+            {
+                _presencaEventoRepository.Atualizar(id, presencaEvento);
+                return Ok(presencaEvento);
+
+            }
+            catch (Exception e)
+            {
                 return BadRequest(e.Message);
             }
         }

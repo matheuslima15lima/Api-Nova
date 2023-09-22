@@ -20,6 +20,12 @@ namespace webapi.event_.tarde.Controllers
             _instituicaoRepository = new InstituicaoRepository();
         }
 
+
+        /// <summary>
+        /// Cadastrar Instituição
+        /// </summary>
+        /// <param name="instituicao"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post(Instituicao instituicao) 
         {
@@ -35,6 +41,27 @@ namespace webapi.event_.tarde.Controllers
                 return BadRequest(e.Message);
             }
             
+        }
+
+        /// <summary>
+        /// Listar Instituições
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Get(Guid id) 
+        {
+            try
+            {
+                return Ok(_instituicaoRepository.Listar());
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+          
+
         }
 
     }

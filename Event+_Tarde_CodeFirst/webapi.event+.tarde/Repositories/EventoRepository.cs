@@ -18,7 +18,15 @@ namespace webapi.event_.tarde.Repositories
             {
                 Evento eventoBuscado = _eventContext.Evento.Find(id)!;
 
+                if (eventoBuscado != null)
+                {
+                    eventoBuscado.Descricao = evento.Descricao;
+                    eventoBuscado.NomeEvento = evento.NomeEvento;
+                }
+
                 _eventContext.Update(eventoBuscado);
+
+                _eventContext.SaveChanges();
             }
             catch (Exception)
             {
@@ -46,7 +54,6 @@ namespace webapi.event_.tarde.Repositories
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

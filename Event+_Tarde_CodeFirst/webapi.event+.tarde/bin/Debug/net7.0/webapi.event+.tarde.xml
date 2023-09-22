@@ -11,6 +11,33 @@
             <param name="evento"></param>
             <returns></returns>
         </member>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.Get">
+            <summary>
+            EndPoint de Listar eventos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.EventoController.Delete(System.Guid)">
+            <summary>
+            EndPoint que Deleta Eventos
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.Post(webapi.event_.tarde.Domains.Instituicao)">
+            <summary>
+            Cadastrar Instituição
+            </summary>
+            <param name="instituicao"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.InstituicaoController.Get(System.Guid)">
+            <summary>
+            Listar Instituições
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Get(webapi.event_.tarde.Domains.PresencaEvento)">
             <summary>
             Método de cadastrar presenças
@@ -31,6 +58,14 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
+        </member>
+        <member name="M:webapi.event_.tarde.Controllers.PresencaEventoController.Put(System.Guid,webapi.event_.tarde.Domains.PresencaEvento)">
+            <summary>
+            Endpoint que atualiza a Situação da presença
+            </summary>
+            <param name="id">Id que receberá o Update</param>
+            <param name="presencaEvento">objeto atualizado</param>
+            <returns>Objeto já atualizado</returns>
         </member>
         <member name="M:webapi.event_.tarde.Controllers.UsuarioController.GetByID(System.Guid)">
             <summary>

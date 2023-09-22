@@ -25,7 +25,7 @@ namespace webapi.event_.tarde.Controllers
         /// <param name="evento"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Post(Evento evento) 
+        public IActionResult Post(Evento evento)
         {
             try
             {
@@ -38,16 +38,71 @@ namespace webapi.event_.tarde.Controllers
 
                 return BadRequest(e.Message);
             }
-        
+
         }
 
+
+        /// <summary>
+        /// EndPoint de Listar eventos
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-       public  IActionResult Get()
+        public IActionResult Get()
         {
             try
             {
-               return Ok(_eventoRepository.Listar());
+                return Ok(_eventoRepository.Listar());
 
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, Evento evento)
+        {
+            try
+            {
+                _eventoRepository.Atualizar(id, evento);
+                return Ok(evento);
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
+
+        /// <summary>
+        /// EndPoint que Deleta Eventos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+                _eventoRepository.Deletar(id);
+                return Ok("Deletado com sucesso!!!");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            try
+            {
+                Evento eventoBuscado = _eventoRepository.BuscarPorId(id);
+                return Ok(eventoBuscado);
             }
             catch (Exception e)
             {

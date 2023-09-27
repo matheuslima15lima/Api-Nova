@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Webapi.HealthClinic.tarde.Domains
 {
-    [Table(nameof(Usuario))]
+    [Table(nameof(Clinica))]
+    [Index(nameof(CNPJ), IsUnique = true)]
     public class Clinica
     {
         [Key]
@@ -11,15 +13,15 @@ namespace Webapi.HealthClinic.tarde.Domains
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "Nome fantasia Obrigatório!!!")]
-        public string NomeFantasia { get; set; }
+        public string? NomeFantasia { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "RazaoSocial Obrigatório!!!")]
-        public string RazaoSocial { get; set; }
+        public string? RazaoSocial { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
-        [Required(ErrorMessage = "RazaoSocial Obrigatório!!!")]
-        public string Endereco { get; set; }
+        [Required(ErrorMessage = "Endereço Obrigatório!!!")]
+        public string? Endereco { get; set; }
 
         [Column(TypeName = "Time ")]
         [Required(ErrorMessage = "HoraAbertura Obrigatório!!!")]
@@ -31,7 +33,7 @@ namespace Webapi.HealthClinic.tarde.Domains
 
         [Column(TypeName = "VARCHAR(100) ")]
         [Required(ErrorMessage = "CNPJ Obrigatório!!!")]
-        public string CNPJ { get; set; }
+        public string? CNPJ { get; set; }
         
 
 

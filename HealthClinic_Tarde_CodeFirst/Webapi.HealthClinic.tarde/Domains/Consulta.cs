@@ -15,7 +15,7 @@ namespace Webapi.HealthClinic.tarde.Domains
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "Descrição Obrigatório!!!")]
-        public string Descricao { get; set; }
+        public string? Descricao { get; set; }
 
 
 
@@ -23,20 +23,20 @@ namespace Webapi.HealthClinic.tarde.Domains
         public Guid IdPaciente { get; set; }
 
         [ForeignKey(nameof(IdPaciente))]
-        public Paciente Paciente { get; set; }
+        public Paciente? Paciente { get; set; }
 
 
-        [Required(ErrorMessage = "Paciente obrigatório")]
+        [Required(ErrorMessage = "Médico obrigatório")]
         public Guid IdMedico { get; set; }
 
         [ForeignKey(nameof(IdMedico))]
-        public Medico Medico { get; set; }
+        public Medico? Medico { get; set; }
 
-        [Required(ErrorMessage = "Paciente obrigatório")]
+        [Required(ErrorMessage = "Situação obrigatória")]
         public Guid IdSitucao { get; set; }
 
         [ForeignKey(nameof(IdSitucao))]
-        public Situacao Situacao { get; set; }
+        public Situacao? Situacao { get; set; }
 
 
 

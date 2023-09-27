@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Webapi.HealthClinic.tarde</name>
+    </assembly>
+    <members>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.TipoUsuarioController.Post(Webapi.HealthClinic.tarde.Domains.TipoUsuario)">
+            <summary>
+            Cadastrar Tipos de usuários
+            </summary>
+            <param name="tipoUsuario"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Webapi.HealthClinic.tarde.Migrations.Bd_v1">
+            <inheritdoc />
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

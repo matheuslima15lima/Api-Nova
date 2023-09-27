@@ -10,7 +10,7 @@ namespace Webapi.HealthClinic.tarde.Domains
         public Guid IdComentario { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "VARCHAR(100)")]
-        public string Descricao { get; set; }
+        public string? Descricao { get; set; }
 
         [Column(TypeName = "DATE")]
         [Required(ErrorMessage = "DataComentario obrigatório!!!")]
@@ -25,7 +25,7 @@ namespace Webapi.HealthClinic.tarde.Domains
         public Guid IdConsulta { get; set; }
 
         [ForeignKey(nameof(IdConsulta))]
-        public Consulta Consulta { get; set; }
+        public Consulta? Consulta { get; set; }
 
 
 
@@ -33,7 +33,7 @@ namespace Webapi.HealthClinic.tarde.Domains
         public Guid IdPaciente { get; set; }
 
         [ForeignKey(nameof(IdPaciente))]
-        public Paciente Paciente { get; set; }
+        public Paciente? Paciente { get; set; }
 
 
     }

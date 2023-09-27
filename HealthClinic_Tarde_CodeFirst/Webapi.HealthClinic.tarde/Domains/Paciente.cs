@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Webapi.HealthClinic.tarde.Domains
 {
     [Table(nameof(Paciente))]
+    [Index(nameof(RG), IsUnique = true)]
     public class Paciente
     {
         [Key]
@@ -18,7 +20,7 @@ namespace Webapi.HealthClinic.tarde.Domains
         public Guid IdUsuario { get; set; }
 
         [ForeignKey(nameof(IdUsuario))]
-        public Usuario Usuario { get; set; }
+        public Usuario? Usuario { get; set; }
 
 
 

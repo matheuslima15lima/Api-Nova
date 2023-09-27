@@ -12,7 +12,7 @@ namespace Webapi.HealthClinic.tarde.Domains
        
 
         [Column(TypeName = "BIT")]
-        [Required(ErrorMessage = "Situação obrigatória!!!")]
+        [Required(ErrorMessage = "Situação da consulta obrigatória!!!")]
         public bool SituacaoConsulta { get; set; } 
 
 

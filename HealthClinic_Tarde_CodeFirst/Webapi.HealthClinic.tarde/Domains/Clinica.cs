@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,6 +9,10 @@ namespace Webapi.HealthClinic.tarde.Domains
     [Index(nameof(CNPJ), IsUnique = true)]
     public class Clinica
     {
+
+       /* [System.Text.Json.Serialization.JsonConverterAttribute(typeof(TimeSpanConverter))]
+        public TimeSpan Interval { get; set; }*/
+
         [Key]
         public Guid IdClinica { get; set; } = Guid.NewGuid();
 
@@ -23,21 +28,19 @@ namespace Webapi.HealthClinic.tarde.Domains
         [Required(ErrorMessage = "Endereço Obrigatório!!!")]
         public string? Endereco { get; set; }
 
-        [Column(TypeName = "Time ")]
-        [Required(ErrorMessage = "HoraAbertura Obrigatório!!!")]
-        public TimeSpan HoraAbertura { get; set; }
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
+        public TimeSpan? HoraAbertura { get; set; }
 
-        [Column(TypeName = "Time ")]
-        [Required(ErrorMessage = "HoraFechamento Obrigatório!!!")]
-        public TimeSpan HoraFechamento { get; set; }
+
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
+        public TimeSpan? HoraFechamento { get; set; }
 
         [Column(TypeName = "VARCHAR(100) ")]
         [Required(ErrorMessage = "CNPJ Obrigatório!!!")]
         public string? CNPJ { get; set; }
-        
-
-
-
 
     }
+    
 }

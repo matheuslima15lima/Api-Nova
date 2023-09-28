@@ -22,7 +22,27 @@ namespace Webapi.HealthClinic.tarde.Repositories
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                Usuario usuarioBuscado = _healthContext.Usuario.Find(id);
+
+                if(usuarioBuscado != null)
+                {
+                    _healthContext.Remove(usuarioBuscado);
+                   
+                }
+                _healthContext.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            
+
         }
     }
 }

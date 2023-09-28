@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Webapi.HealthClinic.tarde.Context;
 
@@ -11,9 +12,11 @@ using Webapi.HealthClinic.tarde.Context;
 namespace Webapi.HealthClinic.tarde.Migrations
 {
     [DbContext(typeof(HealthClinicContext))]
-    partial class HealthClinicContextModelSnapshot : ModelSnapshot
+    [Migration("20230928193957_Bd_v2")]
+    partial class Bd_v2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,6 +43,9 @@ namespace Webapi.HealthClinic.tarde.Migrations
                         .HasColumnType("time");
 
                     b.Property<TimeSpan?>("HoraFechamento")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("Interval")
                         .HasColumnType("time");
 
                     b.Property<string>("NomeFantasia")

@@ -2,10 +2,9 @@
 
 namespace Webapi.HealthClinic.tarde.Interfaces
 {
-    public interface IClinicaRepository
+    public interface IEspecialidadeRepository
     {
-        public void Cadastrar(Clinica clinica);
-
+        public void Cadastrar(Especialidade especialidade);
 
     }
 }

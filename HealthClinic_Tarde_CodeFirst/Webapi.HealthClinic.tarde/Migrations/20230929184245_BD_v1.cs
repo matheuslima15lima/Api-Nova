@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Webapi.HealthClinic.tarde.Migrations
 {
     /// <inheritdoc />
-    public partial class Bd_v1 : Migration
+    public partial class BD_v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -94,7 +94,7 @@ namespace Webapi.HealthClinic.tarde.Migrations
                     IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdEspecialidade = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdClinica = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CRM = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    CRM = table.Column<string>(type: "VARCHAR(14)", nullable: true)
                 },
                 constraints: table =>
                 {

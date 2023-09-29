@@ -25,16 +25,16 @@
             <param name="usuario"></param>
             <returns></returns>
         </member>
-        <member name="T:Webapi.HealthClinic.tarde.Migrations.Bd_v1">
+        <member name="T:Webapi.HealthClinic.tarde.Migrations.BD_v1">
             <inheritdoc />
         </member>
-        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:Webapi.HealthClinic.tarde.Migrations.BD_v1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:Webapi.HealthClinic.tarde.Migrations.BD_v1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:Webapi.HealthClinic.tarde.Migrations.BD_v1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:Webapi.HealthClinic.tarde.Migrations.Bd_v2">
@@ -47,18 +47,6 @@
             <inheritdoc />
         </member>
         <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:Webapi.HealthClinic.tarde.Migrations.Bd_v3">
-            <inheritdoc />
-        </member>
-        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:Webapi.HealthClinic.tarde.Migrations.Bd_v3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

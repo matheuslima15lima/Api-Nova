@@ -12,8 +12,8 @@ using Webapi.HealthClinic.tarde.Context;
 namespace Webapi.HealthClinic.tarde.Migrations
 {
     [DbContext(typeof(HealthClinicContext))]
-    [Migration("20230928194312_Bd_v3")]
-    partial class Bd_v3
+    [Migration("20230929184245_BD_v1")]
+    partial class BD_v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -146,7 +146,7 @@ namespace Webapi.HealthClinic.tarde.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CRM")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("VARCHAR(14) ");
 
                     b.Property<Guid>("IdClinica")
                         .HasColumnType("uniqueidentifier");

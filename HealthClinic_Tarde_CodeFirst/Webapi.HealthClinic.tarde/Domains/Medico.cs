@@ -11,7 +11,7 @@ namespace Webapi.HealthClinic.tarde.Domains
         [Key]
         public Guid IdMedico { get; set; } = Guid.NewGuid();
 
-
+     
         [Required(ErrorMessage = "O  usuário é obrigatório!!!")]
         public Guid IdUsuario { get; set; }
 
@@ -31,6 +31,8 @@ namespace Webapi.HealthClinic.tarde.Domains
         [ForeignKey(nameof(IdClinica))]
         public Clinica? Clinica { get;set; }
 
+        [Column(TypeName = "VARCHAR(14)")]
+        [Required(ErrorMessage = "Crm Obrigatório!!!")]
         public string? CRM { get; set; }
 
 

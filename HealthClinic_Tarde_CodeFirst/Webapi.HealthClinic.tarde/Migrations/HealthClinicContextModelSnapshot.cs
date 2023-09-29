@@ -143,7 +143,8 @@ namespace Webapi.HealthClinic.tarde.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CRM")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(14)");
 
                     b.Property<Guid>("IdClinica")
                         .HasColumnType("uniqueidentifier");
@@ -157,8 +158,7 @@ namespace Webapi.HealthClinic.tarde.Migrations
                     b.HasKey("IdMedico");
 
                     b.HasIndex("CRM")
-                        .IsUnique()
-                        .HasFilter("[CRM] IS NOT NULL");
+                        .IsUnique();
 
                     b.HasIndex("IdClinica");
 

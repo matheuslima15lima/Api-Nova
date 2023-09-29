@@ -8,5 +8,7 @@ namespace Webapi.HealthClinic.tarde.Interfaces
 
         public void Deletar(Guid id);
 
+        public Usuario BuscarPorEmailESenha(string email, string senha);
+
     }
 }

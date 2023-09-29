@@ -38,7 +38,7 @@ namespace webapi.event_.tarde.Repositories
 
                 if (usuarioBuscado != null)
                 {
-                    bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
+                    bool confere =                  Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
 
                     if (confere)
                     {
@@ -61,17 +61,17 @@ namespace webapi.event_.tarde.Repositories
         {
             try
             {
-                Usuario usuarioBuscado = _eventContext.Usuario.Select(u =>new Usuario
+                Usuario usuarioBuscado = _eventContext.Usuario.Select(u => new Usuario
                 {
-                        IdUsuario = u.IdUsuario,
-                        Nome = u.Nome,
-                        Email = u.Email,
+                    IdUsuario = u.IdUsuario,
+                    Nome = u.Nome,
+                    Email = u.Email,
 
-                        TipoUsuario= new TipoUsuario
-                        {
-                            IdTipoUsuario = u.IdTipoUsuario,
-                            Titulo = u.TipoUsuario!.Titulo
-                        }
+                    TipoUsuario = new TipoUsuario
+                    {
+                        IdTipoUsuario = u.IdTipoUsuario,
+                        Titulo = u.TipoUsuario!.Titulo
+                    }
                 }).FirstOrDefault(u => u.IdUsuario == id)!;
 
                 return usuarioBuscado;

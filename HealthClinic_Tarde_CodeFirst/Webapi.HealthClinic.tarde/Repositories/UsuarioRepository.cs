@@ -13,6 +13,50 @@ namespace Webapi.HealthClinic.tarde.Repositories
         {
             _healthContext= new HealthClinicContext();
         }
+
+        public Usuario BuscarPorEmailESenha(string email, string senha)
+        {
+            try
+            {
+                Usuario usuarioBuscado = _healthContext.Usuario.Select(u => new
+              Usuario
+                {
+                    IdUsuario = u.IdUsuario,
+                    Nome = u.Nome,
+                    Email = u.Email,
+                    Senha = u.Senha,
+
+                    TipoUsuario = new TipoUsuario
+                    {
+                        IdTipoUsuario = u.IdTipoUsuario,
+                        Titulo = u.TipoUsuario!.Titulo
+                    }
+                }).FirstOrDefault(u => u.Email == email)!;
+
+                if(usuarioBuscado != null )
+                {
+                    bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha!);
+
+                    if (confere)
+                    {
+                        return usuarioBuscado;
+                    }
+                }
+
+                return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
+
+
+
+
+        }
+
         public void Cadastrar(Usuario usuario)
         {
             usuario.Senha = Criptografia.GerarGash(usuario.Senha!);

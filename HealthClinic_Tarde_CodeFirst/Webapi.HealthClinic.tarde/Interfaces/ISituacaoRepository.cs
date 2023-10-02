@@ -1,6 +1,10 @@
-﻿namespace Webapi.HealthClinic.tarde.Interfaces
+﻿using Webapi.HealthClinic.tarde.Domains;
+
+namespace Webapi.HealthClinic.tarde.Interfaces
 {
-    public class ISituacaoRepository
+    public interface ISituacaoRepository
     {
+        public void Cadastrar(Situacao situacao);
+        
     }
 }

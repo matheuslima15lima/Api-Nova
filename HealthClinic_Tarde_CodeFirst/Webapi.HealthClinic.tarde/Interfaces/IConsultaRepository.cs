@@ -10,8 +10,8 @@ namespace Webapi.HealthClinic.tarde.Interfaces
 
         public void Atualizar(Guid id, Consulta consulta);
 
-        public List<Consulta> ListarConsultaMedico(Guid id);
+        public List<Consulta> ListarConsultaDosUsuarios(Guid id);
 
-        public List<Consulta> ListarConsultaPaciente(Guid id);
+     
     }
 }

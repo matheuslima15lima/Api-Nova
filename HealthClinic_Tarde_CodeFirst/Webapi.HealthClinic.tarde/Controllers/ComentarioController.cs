@@ -9,30 +9,29 @@ namespace Webapi.HealthClinic.tarde.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class ClinicaController : ControllerBase
+    public class ComentarioController : ControllerBase
     {
-        private readonly IClinicaRepository _clinicaRepository;
+        private readonly IComentarioRepository _comentarioRepository;
 
-        public ClinicaController()
+        public ComentarioController()
         {
-            _clinicaRepository= new ClinicaRepository();
+            _comentarioRepository = new ComentarioRepository();
         }
 
-        [Autorize]
         [HttpPost]
-        public IActionResult Post(Clinica clinica) 
+        public IActionResult Post (Comentario comentario)
         {
             try
             {
-                _clinicaRepository.Cadastrar(clinica);
-                return Ok(clinica);
+                _comentarioRepository.Cadastrar(comentario);
+                return Ok(comentario);
             }
             catch (Exception e)
             {
 
                 return BadRequest(e.Message);
             }
-        
         }
+
     }
 }

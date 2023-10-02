@@ -17,7 +17,7 @@ namespace Webapi.HealthClinic.tarde.Controllers
     {
         private readonly IUsuarioRepository _usuarioRepository;
 
-        LoginController()
+       public LoginController()
         {
             _usuarioRepository = new UsuarioRepository();
         }

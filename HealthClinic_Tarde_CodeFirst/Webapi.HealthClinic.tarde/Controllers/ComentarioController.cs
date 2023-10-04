@@ -17,7 +17,11 @@ namespace Webapi.HealthClinic.tarde.Controllers
         {
             _comentarioRepository = new ComentarioRepository();
         }
-
+        /// <summary>
+        /// Endpoint de postar comentário
+        /// </summary>
+        /// <param name="comentario"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post (Comentario comentario)
         {

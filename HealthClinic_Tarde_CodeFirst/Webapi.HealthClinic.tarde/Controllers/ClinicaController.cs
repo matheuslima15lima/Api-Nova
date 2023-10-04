@@ -19,6 +19,12 @@ namespace Webapi.HealthClinic.tarde.Controllers
             _clinicaRepository= new ClinicaRepository();
         }
 
+
+        /// <summary>
+        /// Endpoint de cadastrar clinica
+        /// </summary>
+        /// <param name="clinica"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpPost]
         public IActionResult Post(Clinica clinica) 

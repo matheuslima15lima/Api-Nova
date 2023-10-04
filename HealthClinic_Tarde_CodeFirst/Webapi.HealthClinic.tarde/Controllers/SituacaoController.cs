@@ -17,7 +17,11 @@ namespace Webapi.HealthClinic.tarde.Controllers
         {
             _situacaoRepository = new SituacaoRepository();
         }
-
+        /// <summary>
+        /// Endpoint de cadastrar situacao
+        /// </summary>
+        /// <param name="situacao"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Post (Situacao situacao)
         {

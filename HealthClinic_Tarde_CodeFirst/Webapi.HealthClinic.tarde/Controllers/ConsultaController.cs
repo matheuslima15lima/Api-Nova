@@ -19,6 +19,11 @@ namespace Webapi.HealthClinic.tarde.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
+        /// <summary>
+        /// Endpoint de cadastrar consulta
+        /// </summary>
+        /// <param name="consulta"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpPost]
         public IActionResult Post(Consulta consulta)
@@ -79,5 +84,23 @@ namespace Webapi.HealthClinic.tarde.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [Authorize]
+        [HttpDelete]
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+               Consulta consultaBuscada = _consultaRepository.Deletar(id);
+
+                return Ok("Deletado");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
+        }
+
     }
 }

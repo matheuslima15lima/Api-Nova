@@ -4,6 +4,27 @@
         <name>Webapi.HealthClinic.tarde</name>
     </assembly>
     <members>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.ClinicaController.Post(Webapi.HealthClinic.tarde.Domains.Clinica)">
+            <summary>
+            Endpoint de cadastrar clinica
+            </summary>
+            <param name="clinica"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.ComentarioController.Post(Webapi.HealthClinic.tarde.Domains.Comentario)">
+            <summary>
+            Endpoint de postar comentário
+            </summary>
+            <param name="comentario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.ConsultaController.Post(Webapi.HealthClinic.tarde.Domains.Consulta)">
+            <summary>
+            Endpoint de cadastrar consulta
+            </summary>
+            <param name="consulta"></param>
+            <returns></returns>
+        </member>
         <member name="M:Webapi.HealthClinic.tarde.Controllers.ConsultaController.Get(System.Guid)">
             <summary>
             Liste as consultas dos pacientes e dos médicos aqui!!!
@@ -19,11 +40,46 @@
             <param name="consulta"></param>
             <returns></returns>
         </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.ConsultaController.Delete(System.Guid)">
+            <summary>
+            Deletar consulta
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:Webapi.HealthClinic.tarde.Controllers.EspecialidadeController.Post(Webapi.HealthClinic.tarde.Domains.Especialidade)">
             <summary>
             Endpoint de cadastrrar especialidades
             </summary>
             <param name="especialidade"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.LoginController.Login(Webapi.HealthClinic.tarde.ViewsModels.LoginViewModel)">
+            <summary>
+            Endpoint de Logar
+            </summary>
+            <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.MedicoController.Post(Webapi.HealthClinic.tarde.Domains.Medico)">
+            <summary>
+            Endpoint de cadastrar médico
+            </summary>
+            <param name="medico"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.PacienteController.Post(Webapi.HealthClinic.tarde.Domains.Paciente)">
+            <summary>
+            Endpoint de Cadastrar paciente
+            </summary>
+            <param name="paciente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.SituacaoController.Post(Webapi.HealthClinic.tarde.Domains.Situacao)">
+            <summary>
+            Endpoint de cadastrar situacao
+            </summary>
+            <param name="situacao"></param>
             <returns></returns>
         </member>
         <member name="M:Webapi.HealthClinic.tarde.Controllers.TipoUsuarioController.Post(Webapi.HealthClinic.tarde.Domains.TipoUsuario)">
@@ -45,6 +101,14 @@
             Endpoint de deletar usuários
             </summary>
             <param name="usuario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.UsuarioController.GetByEmailAndPassword(System.String,System.String)">
+            <summary>
+            Endpoint que busca o usuario por email e senha
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
             <returns></returns>
         </member>
         <member name="T:Webapi.HealthClinic.tarde.Migrations.BD_v1">

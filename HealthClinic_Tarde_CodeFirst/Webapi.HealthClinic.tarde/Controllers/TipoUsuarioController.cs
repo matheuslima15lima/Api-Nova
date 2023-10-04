@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Webapi.HealthClinic.tarde.Domains;
 using Webapi.HealthClinic.tarde.Interfaces;
@@ -24,6 +25,7 @@ namespace Webapi.HealthClinic.tarde.Controllers
         /// </summary>
         /// <param name="tipoUsuario"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpPost]
         public IActionResult Post(TipoUsuario tipoUsuario)
         {

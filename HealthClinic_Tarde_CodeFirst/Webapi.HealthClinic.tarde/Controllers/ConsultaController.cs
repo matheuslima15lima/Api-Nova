@@ -84,13 +84,18 @@ namespace Webapi.HealthClinic.tarde.Controllers
                 return BadRequest(e.Message);
             }
         }
+        /// <summary>
+        /// Deletar consulta
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize]
         [HttpDelete]
         public IActionResult Delete(Guid id)
         {
             try
             {
-               Consulta consultaBuscada = _consultaRepository.Deletar(id);
+               _consultaRepository.Deletar(id);
 
                 return Ok("Deletado");
             }

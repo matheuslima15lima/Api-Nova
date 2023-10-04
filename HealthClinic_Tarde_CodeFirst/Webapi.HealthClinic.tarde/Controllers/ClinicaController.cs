@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Webapi.HealthClinic.tarde.Domains;
 using Webapi.HealthClinic.tarde.Interfaces;
@@ -18,7 +19,7 @@ namespace Webapi.HealthClinic.tarde.Controllers
             _clinicaRepository= new ClinicaRepository();
         }
 
-        [Autorize]
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Clinica clinica) 
         {

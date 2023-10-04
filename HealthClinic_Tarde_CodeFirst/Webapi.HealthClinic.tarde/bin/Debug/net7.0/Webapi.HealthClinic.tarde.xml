@@ -11,6 +11,21 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.ConsultaController.Put(System.Guid,Webapi.HealthClinic.tarde.Domains.Consulta)">
+            <summary>
+            Endpoint que atualiza consulta
+            </summary>
+            <param name="id"></param>
+            <param name="consulta"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Webapi.HealthClinic.tarde.Controllers.EspecialidadeController.Post(Webapi.HealthClinic.tarde.Domains.Especialidade)">
+            <summary>
+            Endpoint de cadastrrar especialidades
+            </summary>
+            <param name="especialidade"></param>
+            <returns></returns>
+        </member>
         <member name="M:Webapi.HealthClinic.tarde.Controllers.TipoUsuarioController.Post(Webapi.HealthClinic.tarde.Domains.TipoUsuario)">
             <summary>
             Cadastrar Tipos de usuários

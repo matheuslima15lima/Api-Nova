@@ -15,7 +15,33 @@ namespace Webapi.HealthClinic.tarde.Repositories
 
         public void Atualizar(Guid id, Consulta consulta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Consulta consultaBuscada = _healthcontext.Consulta.Find(id);
+
+                if(consultaBuscada != null)
+                {
+                   consultaBuscada.IdSitucao= consulta.IdSitucao;
+                    consultaBuscada.DataAgendamento = consulta.DataAgendamento;
+                    consultaBuscada.Descricao = consulta.Descricao;
+                    
+                }
+
+
+                _healthcontext.Update(consultaBuscada);
+
+                _healthcontext.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
+            
+
+            
         }
 
         public void Cadastrar(Consulta consulta)

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Webapi.HealthClinic.tarde.Domains;
 using Webapi.HealthClinic.tarde.Interfaces;
@@ -18,6 +19,12 @@ namespace Webapi.HealthClinic.tarde.Controllers
             _especialidadeRepository= new EspecialidadeRepository();
         }
 
+        /// <summary>
+        /// Endpoint de cadastrrar especialidades
+        /// </summary>
+        /// <param name="especialidade"></param>
+        /// <returns></returns>
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Especialidade especialidade) 
         {

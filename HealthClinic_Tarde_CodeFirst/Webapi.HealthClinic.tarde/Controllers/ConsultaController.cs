@@ -19,6 +19,7 @@ namespace Webapi.HealthClinic.tarde.Controllers
             _consultaRepository = new ConsultaRepository();
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Post(Consulta consulta)
         {
@@ -55,6 +56,28 @@ namespace Webapi.HealthClinic.tarde.Controllers
             }
             
         
+        }
+
+        /// <summary>
+        /// Endpoint que atualiza consulta
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="consulta"></param>
+        /// <returns></returns>
+        [Authorize]
+        [HttpPut]
+        public IActionResult Put(Guid id, Consulta consulta)
+        {
+            try
+            {
+                _consultaRepository.Atualizar(id, consulta);
+                return Ok(consulta);
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
         }
     }
 }

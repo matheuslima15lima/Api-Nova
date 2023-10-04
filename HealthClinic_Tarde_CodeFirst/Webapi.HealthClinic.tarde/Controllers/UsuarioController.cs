@@ -59,5 +59,26 @@ namespace Webapi.HealthClinic.tarde.Controllers
             }
         
         }
+
+        /// <summary>
+        /// Endpoint que busca o usuario por email e senha
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetByEmailAndPassword(string email, string senha) 
+        {
+            try
+            {
+                Usuario usuarioBuscado = _usuarioRepository.BuscarPorEmailESenha(email, senha);
+                return Ok(usuarioBuscado);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

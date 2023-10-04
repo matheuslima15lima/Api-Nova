@@ -25,6 +25,7 @@ namespace Webapi.HealthClinic.tarde.Repositories
                     Nome = u.Nome,
                     Email = u.Email,
                     Senha = u.Senha,
+                    Telefone= u.Telefone,
 
                     TipoUsuario = new TipoUsuario
                     {
